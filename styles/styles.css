@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+}
+
+.navbar {
+  background-color: #222;
+  border: none;
+  color: #fff;
+  padding: 15px;
+  height: 30px;
+  margin-bottom: 12px;
+}
+
+.logo {
+  height: 30px;
+}
+
+.grid-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 4px;
+  justify-items: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item img {
+  height: 200px;
+}
+
+.item button {
+  background-color: #222;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}

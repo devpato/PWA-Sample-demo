@@ -2,7 +2,7 @@
 
 let sw = null;
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("sw.js").then(swRegistered => {
+    navigator.serviceWorker.register("OneSignalSDKWorker.js").then(swRegistered => {
         console.log("[ServiceWorker**] - Registered");
         sw = swRegistered;
     });

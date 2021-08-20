@@ -15,11 +15,60 @@
     <title>My PWA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "87c4ae5e-b245-4bc7-a33a-91148ecc81c8",
+        });
+      });
+    </script>
 </head>
 
 
 <body>
-    <p>MY PWA</p>
-    <script src="./js/index.js"></script>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <a href="index.html">
+                    <img src="./assets/icons/icon.png" alt="logo" class="logo" />
+                </a>
+            </div>
+        </div>
+    </nav>
+        <div class="grid-items">
+            <div class="item">
+                <img src="./assets/nike1.jpeg"/>
+                <h2>Item 1</h2>
+                <button>Add To Cart</button>
+            </div>
+            <div class="item">
+                <img src="./assets/nike2.jpeg"/>
+                <h2>Item 2</h2>
+                <button>Add To Cart</button>
+            </div>
+            <div class="item">
+                <img src="./assets/nike3.jpeg"/>
+                <h2>Item 3</h2>
+                <button>Add To Cart</button>
+            </div>
+            <div class="item">
+                <img src="./assets/nike4.jpeg"/>
+                <h2>Item 4</h2>
+                <button>Add To Cart</button>
+            </div>
+            <div class="item">
+                <img src="./assets/nike5.jpeg"/>
+                <h2>Item 5</h2>
+                <button>Add To Cart</button>
+            </div>
+            <div class="item">
+                <img src="./assets/nike6.jpeg"/>
+                <h2>Item 6</h2>
+                <button>Add To Cart</button>
+            </div>
+    </div>
 </body>
-</ lang="en">
+<script src="./js/index.js"></script>
+</lang="en">
