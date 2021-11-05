@@ -1,5 +1,5 @@
 // Service Worker
-const cacheName = "my-pwa-shell-2.0";
+const cacheName = "my-pwa-shell-v1.0";
 const filesToCache = [
     "/",
     "index.html",
@@ -14,7 +14,6 @@ const filesToCache = [
     './assets/nike5.jpeg',
     './assets/nike6.jpeg'
 ];
-const OFFLINE_URL = 'index.html';
 
 self.addEventListener("install", e => {
     console.log("[ServiceWorker**] - Install");
