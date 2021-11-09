@@ -7,12 +7,6 @@ const filesToCache = [
     "./styles/styles.css",
     '/manifest.json',
     './assets/icons/icon.png',
-    './assets/nike1.jpeg',
-    './assets/nike2.jpeg',
-    './assets/nike3.jpeg',
-    './assets/nike4.jpeg',
-    './assets/nike5.jpeg',
-    './assets/nike6.jpeg'
 ];
 
 self.addEventListener("install", e => {
@@ -34,8 +28,12 @@ self.addEventListener('fetch', (e) => {
           return resource;
         }
 
-        const response = await fetch(e.request);
-        return response;
+        caches.open('mysite-dynamic').then((cache)=> {
+            return fetch(e.request).then((response)=> {
+                cache.put(e.request, response.clone());
+              return response;
+            });
+        });
     })());
 });
 

@@ -22,17 +22,17 @@ body {
   justify-items: center;
 }
 
-.item {
+.grid-item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.item img {
+.grid-item img {
   height: 200px;
 }
 
-.item button {
+.grid-item button {
   background-color: #222;
   border: none;
   color: #fff;
