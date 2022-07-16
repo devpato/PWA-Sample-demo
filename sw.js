@@ -16,32 +16,27 @@ const filesToCache = [
 ];
 
 self.addEventListener("install", e => {
-    console.log("[ServiceWorker**] - Install");
-    e.waitUntil(
-        caches.open(cacheName).then(cache => {
-            console.log("[ServiceWorker**] - Caching app shell");
-            cache.addAll(filesToCache);
-        })
-    );
+    console.log("[ServiceWorker] - Install");
+    e.waitUntil((async () => {
+            const cache = await caches.open(cacheName);
+            console.log("[ServiceWorker] - Caching app shell");
+            await cache.addAll(filesToCache);
+        })());
 });
 
-self.addEventListener('fetch', (e) => {
+self.addEventListener('fetch', e => {
     e.respondWith((async () => {
         const resource = await caches.match(e.request);
         console.log(`[Service Worker] Fetching resource: ${e.request.url}`);
         
-        if (resource) { 
-          return resource;
-        }
-
-        const response = await fetch(e.request);
-        return response;
+        return resource || fetch(e.request);
     })());
 });
 
-self.addEventListener("activate", event => {
-    caches.keys().then(keyList => {
-        return Promise.all(
+self.addEventListener("activate", e => {
+    e.waitUntil((async () => {
+        const keyList = await caches.keys();
+        await Promise.all(
             keyList.map(key => {
                 console.log(key);
                 if (key !== cacheName) {
@@ -50,6 +45,6 @@ self.addEventListener("activate", event => {
                 }
             })
         );
-    });
-    event.waitUntil(self.clients.claim());
+    })());
+    e.waitUntil(self.clients.claim());
 });
