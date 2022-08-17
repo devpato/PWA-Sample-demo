@@ -101,7 +101,7 @@ self.addEventListener("activate", e => {
 ```
 
 ### Intercepting network call with the Fetch event
-In this example I'm doing the "Cache first, falling back to network" strategy. With my Service Worker, I'm intercepting the request, looking for that request inside of my cache if the request already exists inside of my cache I will return it. Otherwise, I will fetch the request from the network and return the value from that request.
+In this example, I'm doing the "Cache first, falling back to network" strategy. Using my Service Worker, I'm intercepting the request, looking for that request inside of my cache, and if the request already exists inside of my cache then I will return it. Otherwise, I will fetch the request from the network and return the value from that request.
 
 ```javascript
 self.addEventListener('fetch', e => {
