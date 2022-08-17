@@ -54,7 +54,7 @@ if ("serviceWorker" in navigator) {
 This is your Service Worker file. In this file you will find the basic lifecycles of a Service Worker.
 
 ### Installing the Service Worker
-In the code below. You will find the `install` lifecycle event of a Service Worker. In this lifecycle I'm creating a new cache with the name of "my-pwa-shell-v1.0" and I'm passing the array of `filesToCache` that has all the assets I want to cache in my new cache.
+In the code below. You will find the `install` lifecycle event of a Service Worker. In this lifecycle, I'm creating a new cache with the name of "my-pwa-shell-v1.0" and I'm passing the array of `filesToCache` that has all the assets I want to cache in my new cache.
 
 ```javascript
 const cacheName = "my-pwa-shell-v1.0";
@@ -78,7 +78,7 @@ self.addEventListener("install", e => {
 });
 ```
 ### Activating the Service Worker
-This is one of the most important lifecycles of a Service Worker. In this lifecycle, you can perform operations before you activate the service worker. In the example below, I'm getting rid of the old cache and leaving the new cache. This will help your application free up space in your cache.
+This is one of the most important lifecycles of a Service Worker. In this lifecycle, you can perform operations before you `activate` the Service Worker. In the example below, I'm getting rid of the old cache and leaving the new cache. This will help your application free up space in your cache.
 
 ```javascript
 self.addEventListener("activate", e => {
